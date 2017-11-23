@@ -1,3 +1,30 @@
-navbar{
+body{
 		background-color: black;
 }
+
+.fact{
+	height: 250px;
+text-align: center;
+
+background-size: cover;
+display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:20px;
+}
+
+.fact p{
+		font-family: 'Arvo', serif;
+	color:white;
+width:100%;
+font-size: 30px;
+font-weight: 800;
+}
+ nav > a{
+	color:white !important;
+}
+
+.nav-item .nav-link{
+	color:white !important;
+}
+
