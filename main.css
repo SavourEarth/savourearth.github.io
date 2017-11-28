@@ -3,22 +3,14 @@ body{
 }
 
 .fact{
-	height: 250px;
+	height: 200px;
 text-align: center;
 
 background-size: cover;
-display: flex;
-  align-items: center;
-  justify-content: center;
-  margin:20px;
+  margin:10px;
+  overflow: hidden;
 }
 
-.fact p{
-		font-family: 'Arvo', serif;
-	color:white;
-width:100%;
-font-size: 30px;
-font-weight: 800;
 }
  nav > a{
 	color:white !important;
@@ -28,3 +20,35 @@ font-weight: 800;
 	color:white !important;
 }
 
+
+.fact-image{
+  height: 200px;
+  transition:0.5s;
+  background-position:center;
+  background-size: 100%;
+   }
+   
+
+.fact-text {
+  text-align:center;
+  padding-top:70px;
+  padding-bottom:70px;
+  font-family:Arvo;
+  font-variant: small-caps;
+  font-variant: initial;
+  font-size:30px;
+  color:white;
+  position: relative;
+  margin-top: -200px;
+  z-index: 100;
+  font-weight: 800;
+
+}
+
+.fact:hover > .fact-image{
+	filter:brightness(0.6);
+}
+
+a:hover{
+	text-decoration: none;
+}
