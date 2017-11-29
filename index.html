@@ -4,83 +4,62 @@
 	<title>Title of the document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<!-- Custom CSS file -->
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!-- Arvo Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<!-- Angular JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 
-<body>
-
+<body ng-app="myApp">
+	<!-- navbar -->
 	<nav class="navbar navbar-expand-sm navbar-dark">
 		<a class="navbar-brand" href="#">savour earth.</a>
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-			</ul>
-		</nav>
-
-
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Link</a>
+			</li>
+		</ul>
+	</nav>
+	
+	<div class="main" ng-controller="MainController">
 		<div class="container">
-
-			<div class="fact">
-				<div class="fact-image" style="background-image: url('savourearth5.jpg')"></div>
+			<!-- facts on the main page -->
+			<div class="fact" ng-repeat="fact in facts">
+				<div class="fact-image" style="background-image: url({{fact.background}})"></div>
 				<a href="#">
-					<div class="fact-text">I want the hungry to be fed.</div>
+					<div class="fact-text">{{fact.text}}</div>
 				</a>
 			</div>
-
-			<div class="fact">
-				<div class="fact-image" style="background-image: url('savourearth1.jpg')"></div>
-				<a href="#">
-					<div class="fact-text">I want wars caused by drought to end.</div>
-				</a>
-			</div>
-
-			<div class="fact">
-				<div class="fact-image" style="background-image: url('savourearth4.jpg')"></div>
-				<a href="#">
-					<div class="fact-text">I want climate change reversed.</div>
-				</a>
-			</div>
-
-			<div class="fact">
-				<div class="fact-image" style="background-image: url('savourearth3.jpg')"></div>
-				<a href="#">
-					<div class="fact-text">I want rainforests to last for generations.</div>
-				</a>
-			</div>
-
-			<div class="fact">
-				<div class="fact-image" style="background-image: url('savourearth2.jpg')"></div>
-				<a href="#">
-					<div class="fact-text">I want to remain active for all my life.</div>
-				</a>
-			</div>
-
-
 		</div>
-		<footer class="container">
-			<div class="row">
-				<p class="col-sm-5"></p>
-				<p class="col-sm-2">
-					<a href="https://www.facebook.com/savourearth/">
-						<img src="logo_fb.png" alt="fb-logo">
-					</a>
-					<a href="https://www.instagram.com/savour_earth/">
-						<img src="logo_instagram.png" alt="ig-logo">
-					</a>
-				</p>
-				<p class="col-sm-5"></p>
-			</div>
-		</footer>
 
+	</div>
+	<!-- footer -->
+	<footer class="container">
+		<div class="row">
+			<p class="col-sm-5"></p>
+			<p class="col-sm-2 text-center">
+				<a href="https://www.facebook.com/savourearth/">
+					<img src="logo_fb.png" alt="fb-logo">
+				</a>
+				<a href="https://www.instagram.com/savour_earth/">
+					<img src="logo_instagram.png" alt="ig-logo">
+				</a>
+			</p>
+			<p class="col-sm-5"></p>
+		</div>
+	</footer>
 
+	<!-- Modules -->
+	<script src="js/app.js"></script>
 
-	</body>
+	<!-- Controllers -->
+	<script src="js/controllers/MainController.js"></script>
 
-	</html>
+</body>
+
+</html>
