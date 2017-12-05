@@ -2,42 +2,37 @@
 <html>
 <head>
 	<title>Title of the document</title>
+	<!-- Angular JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<!-- Include the AngularJS routing library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<!-- bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<!-- Custom CSS file -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!-- Arvo Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	<!-- Angular JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
 </head>
 
 <body ng-app="myApp">
 	<!-- navbar -->
 	<nav class="navbar navbar-expand-sm navbar-dark">
-		<a class="navbar-brand" href="#">savour earth.</a>
+		<a class="navbar-brand" href="#">eat facts.</a>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#">About</a>
+				<a class="nav-link" href="#!about">About</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Link</a>
 			</li>
 		</ul>
 	</nav>
-	
-	<div class="main" ng-controller="MainController">
-		<div class="container">
-			<!-- facts on the main page -->
-			<div class="fact" ng-repeat="fact in facts">
-				<div class="fact-image" style="background-image: url({{fact.background}})"></div>
-				<a href="#">
-					<div class="fact-text">{{fact.text}}</div>
-				</a>
-			</div>
-		</div>
+	<!-- main view -->
+	<ng-view></ng-view>
 
-	</div>
 	<!-- footer -->
 	<footer class="container">
 		<div class="row">
@@ -55,7 +50,28 @@
 	</footer>
 
 	<!-- Modules -->
-	<script src="js/app.js"></script>
+	<script>
+	var app = angular.module("myApp", ["ngRoute"]);
+	app.config(function($routeProvider) {
+		$routeProvider
+		.when("/", {
+
+			 //template : "<p ng-repeat='fact in facts'>{{fact.text}}</p>",
+			 controller: "MainController",
+			 templateUrl : "views/factz.html"
+
+			})
+		.when("/about", {
+				//templateUrl : "views/about.html"
+				template : "<h1>Tomato</h1><p>Tomatoes contain around 95% water. {{msg}}</p>",
+				controller:"londonCtrl"
+		});
+	});
+	app.controller("londonCtrl", function ($scope) {
+    $scope.msg = "I love London";
+});
+
+	</script>
 
 	<!-- Controllers -->
 	<script src="js/controllers/MainController.js"></script>
