@@ -1,0 +1,7 @@
+<div class="container">
+    <div ng-repeat="fact in facts | filter:{topic: topic}">
+      <div ng-repeat="text in fact.texts" class="quote stagger-animate">
+        <p>{{text.text}}</p>
+      </div>
+    </div>
+  </div>

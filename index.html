@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Title of the document</title>
-	<!-- Angular JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<!-- Include the AngularJS routing library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-	<!-- bootstrap -->
+	<title>eat facts.</title>
+	<!-- CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	<!-- Custom CSS file -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- JS -->
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+	<!-- bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<!-- Arvo Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 
 
 </head>
 
-<body ng-app="myApp">
-	<!-- navbar -->
-	<nav class="navbar navbar-expand-sm navbar-dark">
+<body ng-animate-children="true" ng-app="myApp">
+	<!-- navbar  fixed-top? -->
+	<nav class="navbar fixed-top navbar-expand-sm navbar-dark">
 		<a class="navbar-brand" href="#">eat facts.</a>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
@@ -28,13 +29,23 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">Link</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://www.instagram.com/savour_earth/">
+					<img src="logo_instagram.png" alt="ig-logo">
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://www.facebook.com/savourearth/">
+					<img src="logo_fb.png" alt="ig-logo">
+				</a>
+			</li>
 		</ul>
 	</nav>
 	<!-- main view -->
-	<ng-view></ng-view>
+	<div ng-view class="view-animate"></div>
 
 	<!-- footer -->
-	<footer class="container">
+	<!-- <footer class="container fixed-bottom">
 		<div class="row">
 			<p class="col-sm-5"></p>
 			<p class="col-sm-2 text-center">
@@ -47,34 +58,14 @@
 			</p>
 			<p class="col-sm-5"></p>
 		</div>
-	</footer>
+	</footer> -->
 
 	<!-- Modules -->
-	<script>
-	var app = angular.module("myApp", ["ngRoute"]);
-	app.config(function($routeProvider) {
-		$routeProvider
-		.when("/", {
-
-			 //template : "<p ng-repeat='fact in facts'>{{fact.text}}</p>",
-			 controller: "MainController",
-			 templateUrl : "views/factz.html"
-
-			})
-		.when("/about", {
-				//templateUrl : "views/about.html"
-				template : "<h1>Tomato</h1><p>Tomatoes contain around 95% water. {{msg}}</p>",
-				controller:"londonCtrl"
-		});
-	});
-	app.controller("londonCtrl", function ($scope) {
-    $scope.msg = "I love London";
-});
-
-	</script>
+	<script src="js/app.js"></script>
 
 	<!-- Controllers -->
 	<script src="js/controllers/MainController.js"></script>
+	<script src="js/controllers/FactController.js"></script>
 
 </body>
 

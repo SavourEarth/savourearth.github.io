@@ -1,11 +1,10 @@
-<p ng-repeat='fact in facts'>{{fact.text}}</p>
-<!-- <div class="main">
+<div class="main">
   <div class="container">
-    <div class="fact" ng-repeat="fact in facts">
+    <div ng-repeat="fact in facts" class="fact stagger-animate">
       <div class="fact-image" style="background-image: url({{fact.background}})"></div>
-      <a href="#">
+      <a href="#!cat/{{fact.topic}}">
         <div class="fact-text">{{fact.text}}</div>
       </a>
     </div>
   </div>
-</div> -->
+</div>
