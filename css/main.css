@@ -1,7 +1,7 @@
 /**********************************general**********************************/
 body{
 	background-color: black;
-	padding:50px 0 50px 0;
+	padding-top:50px;
 	overflow-y: scroll;
 }
 a:hover{
@@ -38,6 +38,24 @@ nav{
 	font-family:Arvo;
 }
 @media (min-width: 978px) {
+	.fact{
+		width:80%;
+		margin: auto;
+		height: 200px !important;
+	}
+	.fact-image{
+		height: 200px !important;
+	}
+
+	.fact-text {
+		text-align:center;
+		padding-top:70px !important;
+		padding-bottom:70px !important;
+		margin-top: -200px !important;
+		font-size: 36px !important;
+	}
+
+
 nav a{
 	font-size: 25px !important;
 }
@@ -45,7 +63,8 @@ nav ul li a{
 	font-size: 16px !important;
 	margin-right:20px;
 	transition: all linear 0.2s;
-} }
+}
+}
 
 .navbar-default{
 	background: black;
