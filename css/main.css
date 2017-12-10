@@ -7,20 +7,45 @@ body{
 a:hover{
 	text-decoration: none;
 }
+/**********************************mobile layout**********************************/
+@media (max-width: 978px) {
+    /*.container {
+      padding:0;
+      margin:0;
+    }
+
+    body {
+      padding:0;
+    }
+
+    nav {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom:0;
+    }*/
+		nav a{
+			font-size: 35px !important;
+		}
+		nav ul li a{
+			font-size: 26px !important;
+			margin-right:20px;
+			transition: all linear 0.2s;
+		}
+}
 /**********************************navigation bar styling**********************************/
 nav{
 	background-color:black;
 	font-family:Arvo;
 }
-
+@media (min-width: 978px) {
 nav a{
-	font-size: 35px !important;
+	font-size: 25px !important;
 }
 nav ul li a{
-	font-size: 26px !important;
+	font-size: 16px !important;
 	margin-right:20px;
 	transition: all linear 0.2s;
-}
+} }
 
 .navbar-default{
 	background: black;
