@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <!-- teaser part -->
+  <div ng-repeat="teaser in teasers | filter:{topic: topic}" class="fact">
+
+    <div class="fact-image" style="background-image: url({{teaser.background}})"></div>
+    <a href="#">
+      <div class="fact-text">{{teaser.text}}</div>
+    </a>
+  </div>
+  <!-- fact part -->
+  <div ng-repeat="st in subtopics | filter:{topic: topic}">
+    <div ng-repeat="item in st.subtopic | filter:{link:subtopic}" class="quote stagger-animate">
+      <a href="#!cat/{{topic}}">
+        <p>{{item.title}}</p>
+      </a>
+    </div>
+  </div>
+    <!-- answer part -->
+  <div ng-repeat="c in content | filter:{topic: topic} | filter:{subtopic: subtopic}" class="content stagger-animate">
+    <p>{{c.text}}</p>
+  </div>
+</div>

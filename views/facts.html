@@ -1,7 +1,18 @@
 <div class="container-fluid">
-    <div ng-repeat="fact in facts | filter:{topic: topic}">
-      <div ng-repeat="text in fact.texts" class="quote stagger-animate">
-        <p>{{text.text}}</p>
+  <!-- teaser part -->
+  <div ng-repeat="teaser in teasers | filter:{topic: topic}" class="fact">
+
+    <div class="fact-image" style="background-image: url({{teaser.background}})"></div>
+    <a href="#">
+      <div class="fact-text">{{teaser.text}}</div>
+    </a>
+  </div>
+  <!-- fact part -->
+    <div ng-repeat="st in subtopics | filter:{topic: topic}">
+      <div ng-repeat="item in st.subtopic" class="quote stagger-animate">
+        <a href="#!{{st.topic}}/{{item.link}}">
+          <p>{{item.title}}</p>
+        </a>
       </div>
     </div>
   </div>
